@@ -1,0 +1,20 @@
+<div>
+  <input [(ngModel)]="city" placeholder="พิมพ์ชื่อเมือง เช่น Bangkok" />
+  <button (click)="search()">ค้นหา</button>
+
+  @if (loading) {
+    <p>กำลังโหลด...</p>
+  }
+
+  @if (error) {
+    <p>{{ error }}</p>
+  }
+
+  @if (weather) {
+    <div>
+      <p>🌡️ อุณหภูมิ: {{ weather.temperature_2m }} °C</p>
+      <p>💧 ความชื้น: {{ weather.relative_humidity_2m }} %</p>
+      <p>💨 ความเร็วลม: {{ weather.windspeed_10m }} km/h</p>
+    </div>
+  }
+</div>
