@@ -21,7 +21,11 @@ export class Weather {
       if(!this.city.trim()) return;
       this.loading = true;
       this.error = '';
-      this.WeatherService.getWeather(this.city).subscribe({
+
+      const searchCity = this.city.trim();
+      this.city = '';
+      
+      this.WeatherService.getWeather(searchCity).subscribe({
         next: (data) => {
           this.weather = data;
           this.loading = false;

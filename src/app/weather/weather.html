@@ -1,9 +1,16 @@
-<div>
-  <input [(ngModel)]="city" placeholder="พิมพ์ชื่อเมือง เช่น Bangkok" />
-  <button (click)="search()">ค้นหา</button>
+<div class="glass-card">
+  <div>
+    <input 
+      class="card-input" 
+      type="text"
+      [(ngModel)]="city"
+      placeholder="Typing City..."
+      (keyup.enter)="search()"
+    />
+  </div>
 
   @if (loading) {
-    <p>กำลังโหลด...</p>
+    <p>Loading⌛</p>
   }
 
   @if (error) {
