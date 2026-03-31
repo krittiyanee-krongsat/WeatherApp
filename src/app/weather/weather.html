@@ -25,11 +25,30 @@
   </div>
 
   @if (weather) {
-    <div>
-      <p>🌡️ อุณหภูมิสูงสุด: {{ weather.daily.temperature_2m_max[0] }} °C</p>
-      <p>🌡️ อุณหภูมิต่ำสุด: {{ weather.daily.temperature_2m_min[0] }} °C</p>
-      <p>💧 ความชื้น: {{ weather.current.relative_humidity_2m }} %</p>
-      <p>💨 ความเร็วลม: {{ weather.current.windspeed_10m }} km/h</p>
+    <div class="weather-info">
+      <div class="info-item">
+        <img src="/images/TemperatureMin.png" alt="min" style="width: 30px; height: 47px"/>
+        <p>{{ weather.daily.temperature_2m_min[0] }}°C</p>
+        <p style="margin-top: -10px">min</p>
+      </div>
+
+      <div class="info-item">
+        <img src="/images/TemperatureMax.png" alt="max" style="width: 30px; height: 47px"/>
+        <p>{{ weather.daily.temperature_2m_max[0] }}°C</p>
+        <p style="margin-top: -10px">max</p>
+      </div>
+
+      <div class="info-item">
+        <img src="/images/humidity.png" alt="humidity" style="width: 30px; height: 47px"/>
+        <p>{{ weather.current.relative_humidity_2m }}%</p>
+        <p style="margin-top: -10px">humidity</p>
+      </div>
+
+      <div class="info-item">
+        <img src="/images/wind.png" alt="wind" style="width: 47px; height: 47px"/>
+        <p>{{ weather.current.windspeed_10m }} km/h</p>
+        <p style="margin-top: -10px">wind</p>
+      </div>
     </div>
   }
 </div>
