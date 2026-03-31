@@ -1,5 +1,20 @@
 <div class="glass-card">
   <div>
+    @if (weather) {
+      <img 
+        [src]="weatherImage"
+        alt="Weather" 
+        style="width: 400px; height: 250px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;"
+      />
+    } @else {
+      <img
+        src="/images/Menu.jpg" 
+        alt="WeatherDefault" 
+        style="width: 400px; height: 250px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;"
+      />
+    }
+  </div>
+  <div>
     <input 
       class="card-input" 
       type="text"
@@ -8,14 +23,6 @@
       (keyup.enter)="search()"
     />
   </div>
-
-  @if (loading) {
-    <p>Loading⌛</p>
-  }
-
-  @if (error) {
-    <p>{{ error }}</p>
-  }
 
   @if (weather) {
     <div>

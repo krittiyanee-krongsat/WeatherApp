@@ -17,6 +17,18 @@ export class Weather {
     private WeatherService: WeatherService,
     private cdr: ChangeDetectorRef
   ) {}
+
+    get weatherImage(): string {
+      if (!this.weather) return '/images/Menu.jpg';
+      const MaxTemp = this.weather.daily.temperature_2m_max[0];
+      const MinTemp = this.weather.daily.temperature_2m_min[0];
+
+      // ถ้า Max > 25 และ Min >= 25 = ร้อน 
+      if (MaxTemp > 25 && MinTemp >= 25) return '/images/WeatherWarm.jpg';
+      // นอกนั้น = เย็น
+      return '/images/WeatherCold.jpg';
+    }
+
     search() {
       if(!this.city.trim()) return;
       this.loading = true;
