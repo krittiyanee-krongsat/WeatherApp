@@ -23,7 +23,7 @@ export class Weather {
       this.error = '';
       this.WeatherService.getWeather(this.city).subscribe({
         next: (data) => {
-          this.weather = data.current;
+          this.weather = data;
           this.loading = false;
           this.cdr.detectChanges();
         },
