@@ -1,11 +1,37 @@
 <div class="glass-card">
-  <div>
+  <div style="position: relative;">
     @if (weather) {
       <img 
         [src]="weatherImage"
         alt="Weather" 
         style="width: 400px; height: 250px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;"
       />
+      <div 
+        style=
+          "position: absolute; 
+          bottom: 8rem; 
+          left: 50%; 
+          transform: translateX(-50%); 
+          text-align: center; 
+          color: white;"
+        >
+        <p 
+        style=
+          "font-size: 24px; 
+          font-weight: semibold; 
+          margin: 0; 
+          text-shadow: 1px 1px 4px rgba(0,0,0,0.6);"
+        >{{ displayCity }}
+        </p>
+        <p 
+        style=
+          "font-size: 48px; 
+          font-weight: semibold; 
+          margin: 0; 
+          text-shadow: 1px 1px 4px rgba(0,0,0,0.6);"
+        >{{ weather.daily.temperature_2m_max[0] }}°C
+        </p>
+      </div>
     } @else {
       <img
         src="/images/Menu.jpg" 
@@ -14,6 +40,7 @@
       />
     }
   </div>
+
   <div>
     <input 
       class="card-input" 

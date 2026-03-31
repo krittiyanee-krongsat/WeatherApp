@@ -9,6 +9,7 @@ import { WeatherService } from '../weather';
 })
 export class Weather {
   city = '';
+  displayCity ='';
   weather: any = null;
   loading = false;
   error = '';
@@ -35,6 +36,7 @@ export class Weather {
       this.error = '';
 
       const searchCity = this.city.trim();
+      this.displayCity = searchCity;
       this.city = '';
       
       this.WeatherService.getWeather(searchCity).subscribe({
