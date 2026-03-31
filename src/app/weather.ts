@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { switchMap } from 'rxjs';
+import { switchMap, throwError } from 'rxjs';
 
 interface GeoResults {
   latitude: number;
@@ -39,6 +39,10 @@ export class WeatherService {
        `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1&language=en`
     ).pipe(
       switchMap(geo => {
+        const result = geo.results?.[0];
+        if (!result || (result.population ?? 0) < 1000) {
+          return throwError(() => new Error(`ไม่พบเมือง"${city}"`))
+        }
         const { latitude, longitude} = geo.results[0];
         //Step 2: Weather
         return this.http.get<WeatherResponse>(
