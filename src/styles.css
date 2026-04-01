@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
 
 html, body {
@@ -5,7 +6,6 @@ html, body {
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow: hidden;
     width: 100dvw;
     min-height: 100dvh;
     background-color: #3F74A1;
@@ -14,8 +14,8 @@ html, body {
 
 @layer components {
     .card-input {
-        @apply w-[200px] sm:w-[200px] box-border bg-[rgba(77,77,77,0.10)] rounded-[15px] border border-[rgba(255,255,255,0.1)] shadow-[inset_2px_2px_0px_-2px_rgba(255,255,255,0.7),_inset_0_0_3px_1px_rgba(255,255,255,0.7)] p-1 text-sm text-white outline-none text-center;
-        &::placeholder { @apply text-[rgba(255,255,255,0.1)]; }
+        @apply w-[250px] sm:w-[250px] box-border bg-[rgba(77,77,77,0.10)] rounded-[15px] border border-[rgba(255,255,255,0.1)] shadow-[inset_2px_2px_0px_-2px_rgba(255,255,255,0.7),_inset_0_0_3px_1px_rgba(255,255,255,0.7)] p-1 text-sm text-white outline-none text-center;
+        &::placeholder { @apply text-[rgba(255,255,255,0.6)]; }
     }
 
     .glass-card {
@@ -44,5 +44,25 @@ html, body {
 
     .weather-images {
         @apply w-[350px] h-[200px] sm:w-[350px] sm:h-[200px] object-cover rounded-[15px] mb-[15px];
+    }
+
+    .modal-overlay-label {
+        @apply absolute top-[10%] left-[50%] translate-x-[-50%] text-center
+    }
+
+    .text-city {
+        @apply text-2xl font-normal mt-0 [text-shadow:1px_1px_4px_rgba(0,0,0,0.6)]
+    }
+
+    .text-header-temperature {
+        @apply text-5xl font-bold mt-0 [text-shadow:1px_1px_4px_rgba(0,0,0,0.6)]
+    }
+
+    .images-icon {
+        @apply w-[20px] h-[35px]
+    }
+
+    .images-icon-wind {
+        @apply w-[37px] h-[37px]
     }
 }

@@ -1,35 +1,15 @@
 <div class="glass-card">
-  <div style="position: relative;">
+  <div class="relative">
     @if (weather) {
       <img 
         [src]="weatherImage"
         alt="Weather" 
         class="weather-images"
       />
-      <div 
-        style=
-          "position: absolute; 
-          bottom: 4.5rem; 
-          left: 50%; 
-          transform: translateX(-50%); 
-          text-align: center; 
-          color: white;"
-        >
-        <p 
-        style=
-          "font-size: 24px; 
-          font-weight: semibold; 
-          margin: 0; 
-          text-shadow: 1px 1px 4px rgba(0,0,0,0.6);"
-        >{{ displayCity }}
+      <div class="modal-overlay-label">
+        <p class="text-city">{{ displayCity }}
         </p>
-        <p 
-        style=
-          "font-size: 48px; 
-          font-weight: semibold; 
-          margin: 0; 
-          text-shadow: 1px 1px 4px rgba(0,0,0,0.6);"
-        >{{ weather.daily.temperature_2m_max[0] }}°C
+        <p class="text-header-temperature">{{ weather.daily.temperature_2m_max[0] }}°C
         </p>
       </div>
     } @else {
@@ -46,7 +26,7 @@
       class="card-input" 
       type="text"
       [(ngModel)]="city"
-      placeholder="Typing City..."
+      placeholder="Please type your city.🏢"
       (keyup.enter)="search()"
     />
   </div>
@@ -54,25 +34,25 @@
   @if (weather) {
     <div class="weather-info">
       <div class="info-item">
-        <img src="/images/TemperatureMin.png" alt="min" style="width: 20px; height: 35px"/>
+        <img src="/images/TemperatureMin.png" alt="min" class="images-icon"/>
         <p>{{ weather.daily.temperature_2m_min[0] }}°C</p>
         <p class="info-item-desc">min</p>
       </div>
 
       <div class="info-item">
-        <img src="/images/TemperatureMax.png" alt="max" style="width: 20px; height: 35px"/>
+        <img src="/images/TemperatureMax.png" alt="max" class="images-icon"/>
         <p>{{ weather.daily.temperature_2m_max[0] }}°C</p>
         <p class="info-item-desc">max</p>
       </div>
 
       <div class="info-item">
-        <img src="/images/humidity.png" alt="humidity" style="width: 20px; height: 35px"/>
+        <img src="/images/humidity.png" alt="humidity" class="images-icon"/>
         <p>{{ weather.current.relative_humidity_2m }}%</p>
         <p class="info-item-desc">humidity</p>
       </div>
 
       <div class="info-item">
-        <img src="/images/wind.png" alt="wind" style="width: 37px; height: 37px"/>
+        <img src="/images/wind.png" alt="wind" class="images-icon-wind"/>
         <p>{{ weather.current.windspeed_10m }} km/h</p>
         <p class="info-item-desc">wind</p>
       </div>
