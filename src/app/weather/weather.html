@@ -35,26 +35,26 @@
     <div class="weather-info">
       <div class="info-item">
         <img src="/images/TemperatureMin.png" alt="min" class="images-icon"/>
-        <p>{{ weather.daily.temperature_2m_min[0] }}°C</p>
         <p class="info-item-desc">min</p>
+        <p class="info-item-head">{{ weather.daily.temperature_2m_min[0] }}°C</p>
       </div>
 
       <div class="info-item">
         <img src="/images/TemperatureMax.png" alt="max" class="images-icon"/>
-        <p>{{ weather.daily.temperature_2m_max[0] }}°C</p>
         <p class="info-item-desc">max</p>
+        <p class="info-item-head">{{ weather.daily.temperature_2m_max[0] }}°C</p>
       </div>
 
       <div class="info-item">
         <img src="/images/humidity.png" alt="humidity" class="images-icon"/>
-        <p>{{ weather.current.relative_humidity_2m }}%</p>
         <p class="info-item-desc">humidity</p>
+        <p class="info-item-head">{{ weather.current.relative_humidity_2m }}%</p>
       </div>
 
       <div class="info-item">
         <img src="/images/wind.png" alt="wind" class="images-icon-wind"/>
-        <p>{{ weather.current.windspeed_10m }} km/h</p>
         <p class="info-item-desc">wind</p>
+        <p class="info-item-head">{{ weather.current.windspeed_10m }} km/h</p>
       </div>
     </div>
   }

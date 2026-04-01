@@ -6,6 +6,7 @@ html, body {
     align-items: center;
     justify-content: center;
     position: relative;
+    overflow-x: hidden;
     width: 100dvw;
     min-height: 100dvh;
     background-color: #3F74A1;
@@ -38,6 +39,10 @@ html, body {
         @apply flex flex-col items-center gap-px text-[16px];
     }
 
+    .info-item-head {
+        @apply text-[16px];
+    }
+
     .info-item-desc {
         @apply text-[16px];
     }
@@ -47,7 +52,7 @@ html, body {
     }
 
     .modal-overlay-label {
-        @apply absolute top-[10%] left-[50%] translate-x-[-50%] text-center
+        @apply absolute top-[15%] left-[50%] translate-x-[-50%] text-center
     }
 
     .text-city {
