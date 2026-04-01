@@ -1,17 +1,29 @@
+<!-- การ์ดหลักที่มีเอฟเฟกต์กระจก (glassmorphism) -->
 <div class="glass-card">
+  
+  <!-- ส่วนแสดงรูปภาพสภาพอากาศ (ใช้ relative เพื่อให้ overlay วางทับได้) -->
   <div class="relative">
+
+    <!-- ถ้ามีข้อมูลสภาพอากาศแล้ว แสดงรูปตามอุณหภูมิ -->
     @if (weather) {
+      <!-- รูปภาพสภาพอากาศ (ร้อน/เย็น) มาจาก getter weatherImage -->
       <img 
         [src]="weatherImage"
         alt="Weather" 
         class="weather-images"
       />
+
+      <!-- overlay ข้อความทับบนรูปภาพ แสดงชื่อเมืองและอุณหภูมิสูงสุด -->
       <div class="modal-overlay-label">
+        <!-- ชื่อเมืองที่ค้นหา -->
         <p class="text-city">{{ displayCity }}
         </p>
+         <!-- อุณหภูมิสูงสุดของวันนี้ -->
         <p class="text-header-temperature">{{ weather.daily.temperature_2m_max[0] }}°C
         </p>
       </div>
+      
+    <!-- ถ้ายังไม่มีข้อมูล แสดงรูป default -->
     } @else {
       <img
         src="/images/Menu.jpg" 
@@ -21,6 +33,7 @@
     }
   </div>
 
+  <!-- ช่อง input สำหรับพิมพ์ชื่อเมือง -->
   <div>
     <input 
       class="card-input" 
@@ -31,26 +44,32 @@
     />
   </div>
 
+  <!-- แสดงข้อมูลสภาพอากาศเพิ่มเติม เฉพาะเมื่อมีข้อมูลแล้วเท่านั้น -->
   @if (weather) {
     <div class="weather-info">
+
+      <!-- อุณหภูมิต่ำสุด -->
       <div class="info-item">
         <img src="/images/TemperatureMin.png" alt="min" class="images-icon"/>
         <p class="info-item-desc">min</p>
         <p class="info-item-head">{{ weather.daily.temperature_2m_min[0] }}°C</p>
       </div>
 
+      <!-- อุณหภูมิสูงสุด -->
       <div class="info-item">
         <img src="/images/TemperatureMax.png" alt="max" class="images-icon"/>
         <p class="info-item-desc">max</p>
         <p class="info-item-head">{{ weather.daily.temperature_2m_max[0] }}°C</p>
       </div>
 
+      <!-- ความชื้นสัมพัทธ์ปัจจุบัน -->
       <div class="info-item">
         <img src="/images/humidity.png" alt="humidity" class="images-icon"/>
         <p class="info-item-desc">humidity</p>
         <p class="info-item-head">{{ weather.current.relative_humidity_2m }}%</p>
       </div>
 
+      <!-- ความเร็วลมปัจจุบัน -->
       <div class="info-item">
         <img src="/images/wind.png" alt="wind" class="images-icon-wind"/>
         <p class="info-item-desc">wind</p>

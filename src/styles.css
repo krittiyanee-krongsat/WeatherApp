@@ -1,6 +1,10 @@
+/* นำเข้าฟอนต์ Inter จาก Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/* นำเข้า Tailwind CSS */
 @import "tailwindcss";
 
+/* ตั้งค่า layout พื้นฐานของทั้งหน้า */
 html, body {
     display: flex;
     align-items: center;
@@ -14,59 +18,73 @@ html, body {
 }
 
 @layer components {
+    /* ช่อง input สำหรับพิมพ์ชื่อเมือง */
     .card-input {
         @apply w-[250px] sm:w-[250px] box-border bg-[rgba(77,77,77,0.10)] rounded-[15px] border border-[rgba(255,255,255,0.1)] shadow-[inset_2px_2px_0px_-2px_rgba(255,255,255,0.7),_inset_0_0_3px_1px_rgba(255,255,255,0.7)] p-1 text-sm text-white outline-none text-center;
         &::placeholder { @apply text-[rgba(255,255,255,0.6)]; }
     }
 
+    /* การ์ดหลักที่มีเอฟเฟกต์กระจก (glassmorphism) */
     .glass-card {
         @apply w-[350px] sm:w-[350px] bg-[rgba(77,77,77,0.10)] rounded-[15px] border border-[rgba(255,255,255,0.1)] shadow-[inset_2px_2px_0px_-2px_rgba(255,255,255,0.7),_inset_0_0_3px_1px_rgba(255,255,255,0.7)] p-5 text-center text-white;
     }
 
+    /* ชื่อเมืองบน overlay รูปภาพ */
     .card-image-overlay .city{
         @apply text-2xl font-medium;
     }
 
+    /* อุณหภูมิบน overlay รูปภาพ */
     .card-image-overlay .temp{
         @apply text-5xl font-bold;
     }
 
+    /* grid แสดงข้อมูลสภาพอากาศ (min, max, humidity, wind) */
     .weather-info {
         @apply grid grid-cols-2 gap-4 mt-4;
     }
 
+    /* แต่ละ item ใน weather-info จัดเรียงแนวตั้ง กึ่งกลาง */
     .info-item {
         @apply flex flex-col items-center gap-px text-[16px];
     }
 
+    /* ตัวเลขค่าหลัก เช่น 32°C, 80% */
     .info-item-head {
         @apply text-[16px];
     }
 
+    /* label ใต้ตัวเลข เช่น "min", "max", "humidity", "wind" */
     .info-item-desc {
         @apply text-[16px];
     }
 
+     /* รูปภาพสภาพอากาศ */
     .weather-images {
         @apply w-[350px] h-[200px] sm:w-[350px] sm:h-[200px] object-cover rounded-[15px] mb-[15px];
     }
 
+    /* overlay ข้อความวางตรงกลางบนรูปภาพ */
     .modal-overlay-label {
         @apply absolute top-[15%] left-[50%] translate-x-[-50%] text-center
     }
 
+    /* ชื่อเมืองบนรูปภาพ */
     .text-city {
         @apply text-2xl font-normal mt-0 [text-shadow:1px_1px_4px_rgba(0,0,0,0.6)]
     }
 
+    /* อุณหภูมิบนรูปภาพ */
     .text-header-temperature {
         @apply text-5xl font-bold mt-0 [text-shadow:1px_1px_4px_rgba(0,0,0,0.6)]
     }
 
+    /* ไอคอนสำหรับ min/max/humidity */
     .images-icon {
         @apply w-[20px] h-[35px]
     }
 
+    /* ไอคอนลม */
     .images-icon-wind {
         @apply w-[37px] h-[37px]
     }
