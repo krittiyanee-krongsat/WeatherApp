@@ -1,59 +1,123 @@
-# WeatherApp
+# 🌤️ Weather App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.5.
+A weather forecast application built with **Angular** that fetches real-time data from the [Open-Meteo API](https://open-meteo.com/).
 
-## Development server
+---
 
-To start a local development server, run:
+## 🛠️ Tech Stack
 
-```bash
-ng serve
+| Layer     | Technology                           |
+|-----------|---------------------------------------|
+| Framework | Angular                               |
+| Language  | TypeScript                            |
+| Styling   | Tailwind CSS                          |
+| Data      | Open-Meteo API                        |
+
+---
+
+## 📁 Project Structure
+
+```
+WEATHERAPP/
+├── src/
+│   ├── app/
+│   │   ├── weather/
+│   │   │   ├── weather.css
+│   │   │   ├── weather.html
+│   │   │   ├── weather.spec.ts
+│   │   │   └── weather.ts
+│   │   ├── app-module.ts
+│   │   ├── app-routing-module.ts
+│   │   ├── app.css
+│   │   ├── app.html
+│   │   ├── app.module.server.ts
+│   │   ├── app.routes.server.ts
+│   │   ├── app.spec.ts
+│   │   ├── app.ts
+│   │   ├── weather.spec.ts
+│   │   └── weather.ts
+│   ├── index.html
+│   ├── main.server.ts
+│   ├── main.ts
+│   ├── server.ts
+│   └── styles.css
+├── .postcssrc.json
+├── angular.json
+├── package.json
+├── tsconfig.json
+├── tsconfig.app.json
+└── tsconfig.spec.json
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## ✅ Prerequisites
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Make sure you have **Node.js** installed on your machine.
 
 ```bash
-ng generate --help
+node -v
 ```
 
-## Building
+> If Node.js is not installed, download it at: [https://nodejs.org](https://nodejs.org)
 
-To build the project run:
+---
+
+## 🚀 Getting Started
+
+### 1. Install Angular CLI
 
 ```bash
-ng build
+npm install -g @angular/cli
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### 2. Create a New Project
 
 ```bash
-ng test
+ng new <my-project> --no-standalone
+cd <my-project>
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+### 3. Open in VS Code
 
 ```bash
-ng e2e
+code .
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### 4. Run the App
 
-## Additional Resources
+```bash
+ng serve --open
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+The app will automatically open at [http://localhost:4200](http://localhost:4200)
+
+---
+
+## 🌐 API Reference
+
+This app utilizes two endpoints from [Open-Meteo](https://open-meteo.com/), both of which are free and require no API key.
+
+| Endpoint  | URL                                              | Description            |
+|-----------|--------------------------------------------------|------------------------|
+| Geocoding | `https://geocoding-api.open-meteo.com/v1/search` | Search city by name    |
+| Forecast  | `https://api.open-meteo.com/v1/forecast`         | Get weather by lat/lon |
+
+---
+
+## ✨ Features
+
+- 🎨 Glassmorphism UI built with Tailwind CSS.
+- 🔍 Search the weather by city name via the input field.
+- 🖥️ Display current temperature on the weather card with city name.
+- 🌡️ Show high/low temperature, humidity, and wind speed.
+
+---
+
+## 📸 Screenshots
+
+### Home Screen
+<img width="300" height="300" alt="menu" src="https://github.com/user-attachments/assets/d70740c6-766a-4eee-b4ec-1ca2c5f79ce1" />
+
+### Information Screen
+<img width="300" height="300" alt="Information" src="https://github.com/user-attachments/assets/e8004d7c-c2b4-4db7-b449-bb9acdca211a" />
