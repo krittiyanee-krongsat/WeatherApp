@@ -64,4 +64,10 @@ export class Weather {
         }
       });
     }
+
+    onKey (event: KeyboardEvent) {
+      if (event.key === 'Enter') {
+        this.search(); // เรียกฟังก์ชันค้นหาเมื่อกด Enter
+      }
+    }
 }

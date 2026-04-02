@@ -41,6 +41,7 @@
       [(ngModel)]="city"
       placeholder="Please type your city.🏢"
       (keyup.enter)="search()"
+      (keyup)="onKey($event)"
     />
   </div>
 
